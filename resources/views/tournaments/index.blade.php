@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CS2 Tournaments</title>
+    <title>CS2 Turniri</title>
 </head>
 <body>
-    <h1>Counter-Strike 2 Tournaments</h1>
+    <h1>Counter-Strike 2 Turniri</h1>
 
     <ul>
         @forelse ($tournaments as $t)
