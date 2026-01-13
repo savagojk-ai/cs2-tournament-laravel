@@ -38,4 +38,9 @@ class Team extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function registrations()
+    {
+        return $this->hasMany(\App\Models\Registration::class);
+    }
 }

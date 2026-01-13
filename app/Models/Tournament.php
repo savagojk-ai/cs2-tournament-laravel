@@ -36,4 +36,9 @@ class Tournament extends Model
             'ends_at' => 'datetime',
         ];
     }
+
+    public function registrations()
+    {
+        return $this->hasMany(\App\Models\Registration::class);
+    }
 }
