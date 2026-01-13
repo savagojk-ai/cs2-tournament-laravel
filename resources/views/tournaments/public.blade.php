@@ -7,6 +7,17 @@
 <body>
 <h1>CS2 Turniri (Public)</h1>
 
+@auth
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
+@endauth
+
+@guest
+    <a href="{{ route('login') }}">Login</a> | <a href="{{ route('register') }}">Register</a>
+@endguest
+
 @if (session('success'))
     <p style="color: green">{{ session('success') }}</p>
 @endif
