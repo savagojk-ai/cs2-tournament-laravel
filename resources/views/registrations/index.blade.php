@@ -1,4 +1,4 @@
-<h1>Registrations</h1>
+<h1>Registracije</h1>
 <ul>
 @foreach($registrations as $r)
   <li>

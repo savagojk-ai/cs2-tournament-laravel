@@ -2,22 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Players</title>
+    <title>Igrači</title>
 </head>
 <body>
-    <h1>Players</h1>
+    <h1>Igrači</h1>
 
-    <p><a href="{{ route('players.create') }}">Create player</a></p>
+    <p><a href="{{ route('players.create') }}">Napravi igrača</a></p>
 
     <ul>
         @forelse ($players as $p)
             <li>
                 <strong>{{ $p->nickname }}</strong>
                 ({{ $p->role }})
-                - Team: {{ $p->team?->name ?? 'N/A' }}
+                - Tim: {{ $p->team?->name ?? 'N/A' }}
             </li>
         @empty
-            <li>No players found.</li>
+            <li>Nijedan igrač nije pronađen.</li>
         @endforelse
     </ul>
 </body>
