@@ -7,8 +7,11 @@ use App\Models\Registration;
 class RegistrationController extends Controller
 {
     public function index()
-    {
-        $registrations = Registration::with(['tournament', 'team'])->latest()->get();
-        return view('registrations.index', compact('registrations'));
-    }
+{
+    $registrations = \App\Models\Registration::with(['team', 'tournament'])
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+    return view('registrations.index', compact('registrations'));
+}
 }
