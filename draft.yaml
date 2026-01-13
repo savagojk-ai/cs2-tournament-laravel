@@ -1,0 +1,42 @@
+models:
+  Team:
+    name: string
+    tag: string:nullable
+    user_id: id foreign
+    timestamps: true
+
+  Player:
+    nickname: string
+    steam_id: string:nullable
+    role: enum:IGL,AWPer,Rifler,Support,Entry
+    team_id: id foreign
+    timestamps: true
+
+  Tournament:
+    name: string
+    location: string:nullable
+    starts_at: datetime
+    ends_at: datetime
+    max_teams: integer default:16
+    status: enum:Draft,Open,Closed default:Open
+    timestamps: true
+
+  Registration:
+    tournament_id: id foreign
+    team_id: id foreign
+    status: enum:Pending,Approved,Rejected default:Pending
+    created_by: id foreign:users
+    timestamps: true
+
+controllers:
+  TeamController:
+    resource: true
+
+  PlayerController:
+    resource: true
+
+  TournamentController:
+    resource: true
+
+  RegistrationController:
+    resource: true

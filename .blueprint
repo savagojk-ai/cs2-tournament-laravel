@@ -1,0 +1,28 @@
+created:
+    - app/Http/Controllers/TeamController.php
+    - app/Http/Controllers/PlayerController.php
+    - app/Http/Controllers/TournamentController.php
+    - app/Http/Controllers/RegistrationController.php
+    - database/factories/TeamFactory.php
+    - database/factories/PlayerFactory.php
+    - database/factories/TournamentFactory.php
+    - database/factories/RegistrationFactory.php
+    - database/migrations/2026_01_13_113108_create_teams_table.php
+    - database/migrations/2026_01_13_113109_create_players_table.php
+    - database/migrations/2026_01_13_113110_create_tournaments_table.php
+    - database/migrations/2026_01_13_113111_create_registrations_table.php
+    - app/Models/Team.php
+    - app/Models/Player.php
+    - app/Models/Tournament.php
+    - app/Models/Registration.php
+    - tests/Feature/Http/Controllers/TeamControllerTest.php
+    - tests/Feature/Http/Controllers/PlayerControllerTest.php
+    - tests/Feature/Http/Controllers/TournamentControllerTest.php
+    - tests/Feature/Http/Controllers/RegistrationControllerTest.php
+updated:
+    - routes/web.php
+models:
+    Team: { name: string, tag: 'string:nullable', user_id: 'id foreign', timestamps: timestamps }
+    Player: { nickname: string, steam_id: 'string:nullable', role: 'enum:IGL,AWPer,Rifler,Support,Entry', team_id: 'id foreign', timestamps: timestamps }
+    Tournament: { name: string, location: 'string:nullable', starts_at: datetime, ends_at: datetime, max_teams: 'integer default:16', status: 'enum:Draft,Open,Closed default:Open', timestamps: timestamps }
+    Registration: { tournament_id: 'id foreign', team_id: 'id foreign', status: 'enum:Pending,Approved,Rejected default:Pending', created_by: 'id foreign:users', timestamps: timestamps }
