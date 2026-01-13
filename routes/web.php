@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TournamentController;
 use App\Http\Controllers\TournamentRegistrationController;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -14,12 +14,3 @@ Route::middleware('auth')->group(function () {
     Route::post('/tournaments/{tournament}/register', [TournamentRegistrationController::class, 'store']);
     Route::delete('/tournaments/{tournament}/register', [TournamentRegistrationController::class, 'destroy']);
 });
-
-
-
-
-
-
-
-
-

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('tournament_id')->constrained();
             $table->foreignId('team_id')->constrained();
-            $table->enum('status', ["Pending","Approved","Rejected"])->default('Pending');
+            $table->enum('status', ['Pending', 'Approved', 'Rejected'])->default('Pending');
             $table->foreignId('created_by')->constrained('users');
             $table->timestamps();
         });

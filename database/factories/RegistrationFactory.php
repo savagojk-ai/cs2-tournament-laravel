@@ -17,7 +17,7 @@ class RegistrationFactory extends Factory
         return [
             'tournament_id' => Tournament::factory(),
             'team_id' => Team::factory(),
-            'status' => fake()->randomElement(["Pending","Approved","Rejected"]),
+            'status' => fake()->randomElement(['Pending', 'Approved', 'Rejected']),
             'created_by' => User::factory()->create()->created_by,
         ];
     }

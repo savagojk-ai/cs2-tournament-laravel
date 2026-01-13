@@ -2,13 +2,9 @@
 
 namespace Tests\Feature\Http\Controllers;
 
-use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 /**
  * @see \App\Http\Controllers\TournamentController
  */
-final class TournamentControllerTest extends TestCase
-{
-    
-}
+final class TournamentControllerTest extends TestCase {}

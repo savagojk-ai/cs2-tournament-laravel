@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nickname');
             $table->string('steam_id')->nullable();
-            $table->enum('role', ["IGL","AWPer","Rifler","Support","Entry"]);
+            $table->enum('role', ['IGL', 'AWPer', 'Rifler', 'Support', 'Entry']);
             $table->foreignId('team_id')->constrained();
             $table->timestamps();
         });

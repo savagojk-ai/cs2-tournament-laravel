@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('starts_at');
             $table->dateTime('ends_at');
             $table->integer('max_teams')->default(16);
-            $table->enum('status', ["Draft","Open","Closed"])->default('Open');
+            $table->enum('status', ['Draft', 'Open', 'Closed'])->default('Open');
             $table->timestamps();
         });
 

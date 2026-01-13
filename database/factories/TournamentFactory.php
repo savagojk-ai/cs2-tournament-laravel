@@ -17,7 +17,7 @@ class TournamentFactory extends Factory
             'starts_at' => fake()->dateTime(),
             'ends_at' => fake()->dateTime(),
             'max_teams' => fake()->numberBetween(-10000, 10000),
-            'status' => fake()->randomElement(["Draft","Open","Closed"]),
+            'status' => fake()->randomElement(['Draft', 'Open', 'Closed']),
         ];
     }
 }

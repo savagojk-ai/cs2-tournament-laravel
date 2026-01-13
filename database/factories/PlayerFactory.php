@@ -15,7 +15,7 @@ class PlayerFactory extends Factory
         return [
             'nickname' => fake()->word(),
             'steam_id' => fake()->regexify('[A-Za-z0-9]{nullable}'),
-            'role' => fake()->randomElement(["IGL","AWPer","Rifler","Support","Entry"]),
+            'role' => fake()->randomElement(['IGL', 'AWPer', 'Rifler', 'Support', 'Entry']),
             'team_id' => Team::factory(),
         ];
     }
