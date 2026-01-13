@@ -6,16 +6,16 @@
 </head>
 <body>
 
-<h1>Team Registrations</h1>
+<h1>Registrovani timovi</h1>
 
 <table border="1" cellpadding="8">
     <thead>
         <tr>
             <th>#</th>
-            <th>Tournament</th>
-            <th>Team</th>
+            <th>Turniri</th>
+            <th>Timovi</th>
             <th>Status</th>
-            <th>Created at</th>
+            <th>Napravljeno:</th>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
             </tr>
         @empty
             <tr>
-                <td colspan="5">No registrations found.</td>
+                <td colspan="5">Nema registracija trenutno.</td>
             </tr>
         @endforelse
     </tbody>
