@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tournament;
 use Illuminate\Http\Request;
+use App\Models\Team;
 
 class TournamentController extends Controller
 {
@@ -34,6 +35,18 @@ class TournamentController extends Controller
 
         Tournament::create($data);
 
-        return redirect('/tournaments')->with('success', 'Tournament created.');
+        return redirect()->route('tournaments.index')
+        ->with('success', 'Turnir uspesno napravljen.');
+    }
+
+    public function publicIndex()
+    {
+        $tournaments = Tournament::with(['registrations.team'])
+            ->orderBy('starts_at')
+            ->get();
+
+        $teams = Team::orderBy('name')->get(); // za dropdown
+
+        return view('tournaments.public', compact('tournaments', 'teams'));
     }
 }

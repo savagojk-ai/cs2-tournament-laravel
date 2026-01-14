@@ -6,6 +6,8 @@
 <body>
     <h1>Counter-Strike 2 Turniri</h1>
 
+    <p><a href="{{ route('tournaments.create') }}">Dodaj turnir</a></p>
+
     <ul>
         @forelse ($tournaments as $t)
             <li>

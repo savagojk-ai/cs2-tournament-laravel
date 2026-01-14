@@ -41,4 +41,6 @@ class Tournament extends Model
     {
         return $this->hasMany(\App\Models\Registration::class);
     }
+
+    protected $guarded = [];
 }

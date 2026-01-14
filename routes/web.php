@@ -26,7 +26,7 @@ Route::resource('players', PlayerController::class);
 Route::resource('tournaments', TournamentController::class);
 Route::resource('registrations', RegistrationController::class);
 
-Route::get('/tournaments-public', [TournamentController::class, 'index'])->name('tournaments.public');
+Route::get('/tournaments-public', [TournamentController::class, 'publicIndex'])->name('tournaments.public');
 
 Route::middleware('auth')->group(function () {
     Route::post('/tournaments/{tournament}/register', [TournamentRegistrationController::class, 'store'])
